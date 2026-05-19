@@ -152,6 +152,104 @@ button{appearance:none;border:none;border-radius:16px;padding:14px 16px;font-siz
 .side-title {
   margin-top: 0 !important;
 }
+/* ===== 상세 상단 버튼 강제 표시 ===== */
+.detail-shell {
+  position: relative !important;
+  overflow: hidden !important;
+}
+
+.detail-toolbar,
+.detail-topbar,
+.topbar {
+  position: absolute !important;
+  top: 14px !important;
+  left: 0 !important;
+  right: 0 !important;
+  z-index: 999 !important;
+
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+
+  padding: 0 18px !important;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  pointer-events: none !important;
+}
+
+/* 버튼은 다시 클릭 가능하게 */
+.detail-toolbar > *,
+.detail-topbar > *,
+.topbar > * {
+  pointer-events: auto !important;
+}
+
+/* 뒤로가기 / 새로고침 버튼 */
+.back-btn,
+.refresh-btn,
+.detail-toolbar button,
+.detail-topbar button,
+.topbar button {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  width: 42px !important;
+  height: 42px !important;
+  padding: 0 !important;
+  margin: 0 !important;
+
+  background: transparent !important;
+  border: none !important;
+  color: #fff !important;
+
+  opacity: 1 !important;
+  visibility: visible !important;
+  appearance: none !important;
+  -webkit-appearance: none !important;
+}
+
+/* svg 아이콘이면 */
+.back-btn svg,
+.refresh-btn svg,
+.detail-toolbar button svg,
+.detail-topbar button svg,
+.topbar button svg {
+  width: 28px !important;
+  height: 28px !important;
+  fill: #fff !important;
+  stroke: #fff !important;
+  display: block !important;
+}
+
+/* 아이콘이 문자(←, ↻)일 때도 보이게 */
+.back-btn,
+.refresh-btn {
+  font-size: 30px !important;
+  line-height: 1 !important;
+  font-weight: 700 !important;
+}
+
+/* 큰 중앙 아이콘만 숨김 */
+.side-icon {
+  display: none !important;
+}
+
+/* 컬러 영역이 바로 위에서 시작 */
+.detail-side {
+  padding-top: 56px !important;
+  justify-content: flex-start !important;
+}
+
+.side-no {
+  margin-top: 0 !important;
+  margin-bottom: 18px !important;
+}
+
+.side-title {
+  margin-top: 0 !important;
+}
 </style>
 <meta name="robots" content="noindex, nofollow" />
 </head>
