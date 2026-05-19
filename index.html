@@ -514,6 +514,40 @@ document.getElementById('resetBtn').addEventListener('click', () => {
 });
 
 renderQuestions();
+function previewResultsDirect() {
+  const fakeScores = {
+    BP: 65,
+    PP: 78,
+    BS: 73,
+    TH: 59,
+    HU: 70
+  };
+
+  renderResults(fakeScores);
+}
+
+// 개발용: 주소 뒤에 ?preview=1 붙이면 바로 결과 보기
+window.addEventListener('load', () => {
+  const params = new URLSearchParams(location.search);
+  const preview = params.get('preview');
+  const type = params.get('type');
+
+  if (preview === '1') {
+    const fakeScores = {
+      BP: 65,
+      PP: 78,
+      BS: 73,
+      TH: 59,
+      HU: 70
+    };
+
+    if (type) {
+      renderDetail(type, fakeScores);
+    } else {
+      renderResults(fakeScores);
+    }
+  }
+});
 </script>
 <p style="text-align:center; color:#666; font-size:14px; margin:24px 0 12px 0;">
   본 페이지는 비공식 자가진단용으로 제작되었습니다.
